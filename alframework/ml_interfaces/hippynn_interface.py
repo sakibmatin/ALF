@@ -1,18 +1,10 @@
 from parsl import python_app, bash_app
-import sys
 import multiprocessing
 import re
 import numpy as np
 import glob
 import os
 from ase import units
-
-# Disable warnings during debugging.
-from numba.core.errors import NumbaPerformanceWarning
-import warnings
-warnings.simplefilter('ignore', category=NumbaPerformanceWarning) 
-import hippynn
-hippynn.settings.WARN_LOW_DISTANCES=False
 
 def train_HIPNN_model(model_dir,
                       h5_train_dir,
